@@ -13,7 +13,7 @@ export function main()
         {
             _data = fs.readFileSync('./problem1/input.txt', 'utf8').split('\n');
         }
-        else
+        else//Just in case the problem1 folder was opened
         {
             _data = fs.readFileSync('./input.txt', 'utf8').split('\n');
         }
