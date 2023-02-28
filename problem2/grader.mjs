@@ -7,7 +7,16 @@ export function main()
 
     try 
     {
-        let _data = fs.readFileSync('./input.txt', 'utf8').split('\n');
+        let _data;
+
+        if(fs.existsSync("./problem2/input.txt"))
+        {
+            _data = fs.readFileSync('./problem2/input.txt', 'utf8').split('\n');
+        }
+        else
+        {
+            _data = fs.readFileSync('./input.txt', 'utf8').split('\n');
+        }
 
         for (let i = 0; i < _data.length; i += 4) 
         {
