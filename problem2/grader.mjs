@@ -36,9 +36,11 @@ export function main()
 
     for(let i = 0; i < data.length; i++)
     {
-        if(run(data[i][0], data[i][1], data[i][2]) != data[i][3])
+        let returnedData = run(data[i][0], data[i][1], data[i][2]);
+
+        if(returnedData[0] != data[i][3][0] && returnedData[1] != data[i][3][1])
         {
-            console.error(`Test ${i} failed! Expected ${data[i][1]} but got ${run(data[i][0])} instead.`);
+            console.error(`Test ${i} failed! Expected ${data[i][3]} but got ${returnedData} instead.`);
             passed = false;
         }
     }
