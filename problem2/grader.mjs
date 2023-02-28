@@ -32,16 +32,25 @@ export function main()
         console.error(err);
     }
 
+    let passed = true;
+
     for(let i = 0; i < data.length; i++)
     {
         if(run(data[i][0], data[i][1], data[i][2]) != data[i][3])
         {
             console.error(`Test ${i} failed! Expected ${data[i][1]} but got ${run(data[i][0])} instead.`);
-            return;
+            passed = false;
         }
     }
 
-    console.log("All tests passed!");
+    if(passed == true)
+    {
+        console.log("All tests passed!");
+    }
+    else
+    {
+        console.warn("\nNot all tests passed. Read the logs above for more info.");
+    }
 }
 
 main();
